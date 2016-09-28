@@ -35,6 +35,17 @@ public class TestFindVowel {
 			System.out.println("Teste Invalido: " + result);
 	}
 	
+	public static void testWithNoCharUnique(FindVowel findVowel) {
+		Stream input = new StreamImpl("eaba".toLowerCase());
+		
+		char result = findVowel.findVowel(input);
+		
+		if(Character.compare('#', result) == 0) {
+			System.out.println("Teste Valido: " + result);
+		} else
+			System.out.println("Teste Invalido: " + result);
+	}
+	
 	public static void testWithCharUniqueWithoutConsonant(FindVowel findVowel) {
 		Stream input = new StreamImpl("eaba".toLowerCase());
 		
@@ -53,6 +64,7 @@ public class TestFindVowel {
 		testWithInputQuestionExample(findVowel);
 		testWithCharInFirstPosition(findVowel);
 		testWithTwoCharUniques(findVowel);
+		testWithNoCharUnique(findVowel);
 		testWithCharUniqueWithoutConsonant(findVowel);
 		
 	}

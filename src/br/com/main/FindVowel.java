@@ -7,12 +7,11 @@ import java.util.Set;
 
 public class FindVowel {
 	
-	/* each position represent a vowel
-	 * pos[0] == a, pos[1] == b ...
-	 * the vector will store the quantity of vowels
-	 * in input stream
-	*/
-	
+	/* Funcao verifica se encontrou uma vogal apos uma consoante, 
+	 * se sim, verifica se o array com caracteres unicos contem a vogal,
+	 * se contem, remove ela do array de unicos
+	 * se nao, verifica se a vogal ja foi lida e armazenada no array de repetidos
+	 * se nao foi armazenada entao armazena no array de vogais unicas */
 	public void addORemoveChar(List<Character> characterUniques, Set<Character> characterRepeated, boolean vowel, boolean consonant, char letter) {		
 		if(vowel) {			
 			if(characterUniques.contains(letter)) {
@@ -23,15 +22,20 @@ public class FindVowel {
 					characterUniques.add(letter);
 			}
 			
+			/*Adiciona ao array de repetidas para que nao seja adicionada ao array de unicos*/
 			characterRepeated.add(letter);
 		}
 	}
 
 	public char findVowel(Stream input){
 		
+		/*flags para verificar se é uma vogal e se tem uma consoante antes*/
 		boolean consonant = false;
 		boolean vowel = false;
 		
+		/*Arrays para armazenar os caracteres unicos encontrados e os repetidos.
+		 * Ao final da funcao o primeiro elemento do array de unicos deve ser a
+		 * primeira vogal lida apos uma consoante sem se repetir na stream*/
 		List<Character> characterUniques = new ArrayList<>();
 		Set<Character> characterRepeated = new HashSet<>();
 		
@@ -86,8 +90,7 @@ public class FindVowel {
 		try {
 			return characterUniques.get(0);
 		} catch (Exception e) {
-			// TODO: handle exception
-			System.out.println("Não encontrado");
+			System.out.println("Não foi encontrato caracter com apenas uma ocorrência.");
 			return '#';
 		}
 	}
