@@ -27,7 +27,7 @@ public class FindVowel {
 		}
 	}
 
-	public boolean findVowel(Stream input) {
+	public char findVowel(Stream input){
 		
 		boolean consonant = false;
 		boolean vowel = false;
@@ -83,10 +83,12 @@ public class FindVowel {
 			}
 		}
 		
-		for (Character character : characterUniques) {
-			System.out.println(character);
+		try {
+			return characterUniques.get(0);
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println("Não encontrado");
+			return '#';
 		}
-		
-		return false;
 	}
 }
