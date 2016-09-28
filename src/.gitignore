@@ -1,2 +1,7 @@
 # eliminate all compiled files
-*.class
+bin/
+
+# eliminate config eclipse
+.settings/
+
+.classpath
