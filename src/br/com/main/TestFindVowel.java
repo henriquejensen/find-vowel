@@ -2,10 +2,10 @@ package br.com.main;
 
 public class TestFindVowel {
 	
-	public static void testWithInputQuestionExample(FindVowel findVowel) {
+	public static void testWithInputQuestionExample() {
 		Stream input = new StreamImpl("aAbBABacfe".toLowerCase());
 		
-		char result = findVowel.findVowel(input);
+		char result = FindVowel.firstChar(input);
 		
 		if(Character.compare('e', result) == 0) {
 			System.out.println("Teste Valido: " + result);
@@ -13,10 +13,10 @@ public class TestFindVowel {
 			System.out.println("Teste Invalido: " + result);
 	}
 	
-	public static void testWithCharInFirstPosition(FindVowel findVowel) {
+	public static void testWithCharInFirstPosition() {
 		Stream input = new StreamImpl("cuaAbBABacf".toLowerCase());
 		
-		char result = findVowel.findVowel(input);
+		char result = FindVowel.firstChar(input);
 		
 		if(Character.compare('u', result) == 0) {
 			System.out.println("Teste Valido: " + result);
@@ -24,10 +24,10 @@ public class TestFindVowel {
 			System.out.println("Teste Invalido: " + result);
 	}
 	
-	public static void testWithTwoCharUniques(FindVowel findVowel) {
+	public static void testWithTwoCharUniques() {
 		Stream input = new StreamImpl("cacacice".toLowerCase());
 		
-		char result = findVowel.findVowel(input);
+		char result = FindVowel.firstChar(input);
 		
 		if(Character.compare('i', result) == 0) {
 			System.out.println("Teste Valido: " + result);
@@ -35,10 +35,10 @@ public class TestFindVowel {
 			System.out.println("Teste Invalido: " + result);
 	}
 	
-	public static void testWithNoCharUnique(FindVowel findVowel) {
+	public static void testWithNoCharUnique() {
 		Stream input = new StreamImpl("eaba".toLowerCase());
 		
-		char result = findVowel.findVowel(input);
+		char result = FindVowel.firstChar(input);
 		
 		if(Character.compare('#', result) == 0) {
 			System.out.println("Teste Valido: " + result);
@@ -46,10 +46,10 @@ public class TestFindVowel {
 			System.out.println("Teste Invalido: " + result);
 	}
 	
-	public static void testWithCharUniqueWithoutConsonant(FindVowel findVowel) {
+	public static void testWithCharUniqueWithoutConsonant() {
 		Stream input = new StreamImpl("eaba".toLowerCase());
 		
-		char result = findVowel.findVowel(input);
+		char result = FindVowel.firstChar(input);
 		
 		if(Character.compare('#', result) == 0) {
 			System.out.println("Teste Valido: " + result);
@@ -57,15 +57,12 @@ public class TestFindVowel {
 			System.out.println("Teste Invalido: " + result);
 	}
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		FindVowel findVowel = new FindVowel();
-		
-		testWithInputQuestionExample(findVowel);
-		testWithCharInFirstPosition(findVowel);
-		testWithTwoCharUniques(findVowel);
-		testWithNoCharUnique(findVowel);
-		testWithCharUniqueWithoutConsonant(findVowel);
+	public static void main(String[] args) {		
+		testWithInputQuestionExample();
+		testWithCharInFirstPosition();
+		testWithTwoCharUniques();
+		testWithNoCharUnique();
+		testWithCharUniqueWithoutConsonant();
 		
 	}
 

@@ -12,7 +12,7 @@ public class FindVowel {
 	 * se contem, remove ela do array de unicos
 	 * se nao, verifica se a vogal ja foi lida e armazenada no array de repetidos
 	 * se nao foi armazenada entao armazena no array de vogais unicas */
-	public void addORemoveChar(List<Character> characterUniques, Set<Character> characterRepeated, boolean vowel, boolean consonant, char letter) {		
+	public static void addORemoveChar(List<Character> characterUniques, Set<Character> characterRepeated, boolean vowel, boolean consonant, char letter) {		
 		if(vowel) {			
 			if(characterUniques.contains(letter)) {
 				int i = characterUniques.indexOf(letter);
@@ -27,7 +27,7 @@ public class FindVowel {
 		}
 	}
 
-	public char findVowel(Stream input){
+	public static char firstChar(Stream input){
 		
 		/*flags para verificar se é uma vogal e se tem uma consoante antes*/
 		boolean consonant = false;
