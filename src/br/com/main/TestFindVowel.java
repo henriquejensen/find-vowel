@@ -3,7 +3,7 @@ package br.com.main;
 public class TestFindVowel {
 	
 	public static void testCharAtFirstPosition(FindVowel findVowel) {
-		StreamImpl input = new StreamImpl("aXcc");
+		Stream input = new StreamImpl("aAbBABacfe".toLowerCase());
 		
 		findVowel.findVowel(input);
 		
